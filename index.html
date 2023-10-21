@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kalkulator Sederhana</title>
+</head>
+<body>
+  <div>
+    <h1>Kalkulator Sederhana</h1>
+    <p>Rafidhiya Bagus Farizki</p>
+    <h5>NIM 202110370311424</h5>
+    <input type="number" id="angka1" placeholder="Angka 1" />
+    <br />
+    <br />
+    <input type="number" id="angka2" placeholder="Angka 2" />
+    <!-- <p>Hasil: <span id="hasil">-</span></p> -->
+    <div class="row">
+      <div style="margin-top: 10px; margin-right: 8px">
+        <button onclick="tambah()">+</button>
+        <button onclick="kurang()">-</button>
+        <button onclick="kali()">*</button>
+        <button onclick="bagi()">/</button>
+        <button onclick="kuadrat()">^</button>
+      </div>
+      <div style="margin-top: 10px; margin-right: 8px">
+        <button onclick="hitungSin()">sin</button>
+        <button onclick="hitungCos()">cos</button>
+        <button onclick="hitungTan()">tan</button>
+        <button onclick="hitungLog()">log</button>
+      </div>
+    </div>
+    <script>
+      function tambah() {
+        const angka1 = parseFloat(document.getElementById("angka1").value);
+        const angka2 = parseFloat(document.getElementById("angka2").value);
+        const hasil = angka1 + angka2;
+        alert("Hasil Penjumlahannya adalah " + hasil);
+      }
+
+      function kurang() {
+        const angka1 = parseFloat(document.getElementById("angka1").value);
+        const angka2 = parseFloat(document.getElementById("angka2").value);
+        const hasil = angka1 - angka2;
+        alert("Hasil Pengurangannya adalah " + hasil);
+      }
+
+      function kali() {
+        const angka1 = parseFloat(document.getElementById("angka1").value);
+        const angka2 = parseFloat(document.getElementById("angka2").value);
+        const hasil = angka1 * angka2;
+        alert("Hasil Perkaliannya adalah " + hasil);
+      }
+
+      function bagi() {
+        const angka1 = parseFloat(document.getElementById("angka1").value);
+        const angka2 = parseFloat(document.getElementById("angka2").value);
+        if (angka2 === 0) {
+          alert("Tidak dapat dibagi dengan angka 0");
+        } else {
+          const hasil = angka1 / angka2;
+          alert("Hasil Pembagiannya: " + hasil);
+        }
+      }
+
+      function kuadrat() {
+        const angka1 = parseFloat(document.getElementById("angka1").value);
+        const angka2 = parseFloat(document.getElementById("angka2").value);
+        if (!isNaN(angka1) && !isNaN(angka2)) {
+          const hasil = Math.pow(angka1, angka2);
+          alert(angka1 + " pangkat " + angka2 + " = " + hasil);
+        } else {
+          alert("Masukkan angka yang valid untuk kedua input.");
+        }
+      }
+
+      function hitungSin() {
+        const angka1 = parseFloat(document.getElementById("angka1").value);
+        const hasil = Math.sin(angka1);
+        alert("sin(" + angka1 + ") = " + hasil);
+      }
+
+      function hitungCos() {
+        const angka1 = parseFloat(document.getElementById("angka1").value);
+        const hasil = Math.cos(angka1);
+        alert("cos(" + angka1 + ") = " + hasil);
+      }
+
+      function hitungTan() {
+        const angka1 = parseFloat(document.getElementById("angka1").value);
+        const hasil = Math.tan(angka1);
+        alert("tan(" + angka1 + ") = " + hasil);
+      }
+
+      function hitungLog() {
+        const angka1 = parseFloat(document.getElementById("angka1").value);
+        if (angka1 <= 0) {
+          alert("Argumen logaritma harus lebih besar dari 0");
+        } else {
+          const hasil = Math.log(angka1);
+          alert("log(" + angka1 + ") = " + hasil);
+        }
+      }
+    </script>
+  </body>
+</html>
